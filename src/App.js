@@ -7,20 +7,10 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 
-import { Offcanvas } from 'bootstrap';
-import { Ratio } from 'react-bootstrap';
-import Table from 'react-bootstrap';
-
 function App() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [users, setUsers] = useState([]);
+  const [password, setPass] = useState("");
 
-  const createUser = () => {
-    const newUsers = [...users]
-    newUsers.push({email: email, password: password})
-    setUsers(newUsers)
-  }
 
   return (
     <>
@@ -33,27 +23,10 @@ function App() {
           </Form.Group>
         </Col>
       </Row>
-      <Row>
-        <Col xs={6}>
-          <Form.Group>
-            <Form.Label>Passord</Form.Label>
-            <Form.Control type="password" onChange={e => setPassword(e.target.value)}/>
-          </Form.Group>
-        </Col>
-      </Row>
-      <Button variant="primary" onClick={createUser} className={"my-3"}>
+      <Button variant="primary" className={"my-3"}>
         Create
       </Button>
-      {
-        users.map((user, index) => <Card key={index} style={{ width: '18rem' }}>
-          <Card.Body>
-            <Card.Title>{user.email}</Card.Title>
-            <Card.Text>
-              {user.password}
-            </Card.Text>
-          </Card.Body>
-        </Card>)
-      }
+      <p>Wow beau form le gros!</p>
     </Container>
     </>
   );
