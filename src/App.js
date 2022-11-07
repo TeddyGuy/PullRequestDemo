@@ -14,12 +14,12 @@ import Table from 'react-bootstrap';
 function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [users, setU] = useState([]);
+  const [users, setUsers] = useState([]);
 
   const c = () => {
     const newU = [...users]
     newU.push({email: email, password: password})
-    setU(newU)
+    setUsers(newU)
   }
 
   return (
