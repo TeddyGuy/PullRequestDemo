@@ -16,10 +16,10 @@ function App() {
   const [password, setPassword] = useState("");
   const [users, setUsers] = useState([]);
 
-  const c = () => {
-    const newU = [...users]
-    newU.push({email: email, password: password})
-    setUsers(newU)
+  const createUser = () => {
+    const newUsers = [...users]
+    newUsers.push({email: email, password: password})
+    setUsers(newUsers)
   }
 
   return (
@@ -41,7 +41,7 @@ function App() {
           </Form.Group>
         </Col>
       </Row>
-      <Button variant="primary" onClick={c} className={"my-3"}>
+      <Button variant="primary" onClick={createUser} className={"my-3"}>
         Create
       </Button>
       {
