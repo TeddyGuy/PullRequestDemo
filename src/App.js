@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 
 function App() {
+  const [email, setEmail] = useState("");
+  const [password, setPass] = useState("");
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Container fluid>
+      <Row>
+        <Col xs={6}>
+          <Form.Group>
+            <Form.Label>Email</Form.Label>
+            <Form.Control type="email" placeholder="joe@biden.us" onChange={e => setEmail(e.target.value)}/>
+          </Form.Group>
+        </Col>
+      </Row>
+      <Button variant="primary" className={"my-3"}>
+        Create
+      </Button>
+      <p>Wow beau form le gros!</p>
+    </Container>
+    </>
   );
 }
 
